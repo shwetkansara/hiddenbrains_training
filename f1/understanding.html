@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>understanding</title>
+</head>
+<body>
+    <script>
+        
+        let input = prompt("Enter array elements separated by commas (example: 10,20,30)");
+
+        let arr = input.split(","); // converts string to array
+
+        console.log("Original Array:", arr);
+
+
+        // push()
+        arr.push("NEW");
+        console.log("After push:", arr);
+
+        // pop() 
+        arr.pop();
+        console.log("After pop:", arr);
+
+        // unshift() 
+        arr.unshift("START");
+        console.log("After unshift:", arr);
+
+        // shift() 
+        arr.shift();
+        console.log("After shift:", arr);
+
+
+        // indexOf() 
+        console.log("Index of '20':", arr.indexOf("20"));
+
+        // includes() 
+        console.log("Includes '30'?", arr.includes("30"));
+
+       
+
+        // map() 
+        let mappedArray = arr.map(item => item + "_item");
+        console.log("Mapped Array:", mappedArray);
+
+        // filter() 
+        let filteredArray = arr.filter(item => item > 20);
+        console.log("Filtered Array (>20):", filteredArray);
+
+       
+        let numbers = arr.map(Number); // convert strings to numbers
+
+        let sum = numbers.reduce((total, num) => total + num, 0);
+        console.log("Sum using reduce:", sum);
+
+
+        // sort()
+        numbers.sort((a, b) => a - b);
+        console.log("Sorted Array:", numbers);
+
+        // reverse()
+        numbers.reverse();
+        console.log("Reversed Array:", numbers);
+
+        // slice() 
+        let sliced = arr.slice(1, 3);
+        console.log("Sliced Array:", sliced);
+
+        // splice()
+        arr.splice(1, 1, "REPLACED");
+        console.log("After splice:", arr);
+
+        // join() 
+        let joined = arr.join(" | ");
+        console.log("Joined String:", joined);
+    </script> 
+</body>
+</html>
