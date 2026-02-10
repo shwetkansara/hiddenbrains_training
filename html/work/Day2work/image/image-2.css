@@ -1,0 +1,66 @@
+header{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: bisque;
+    padding: 5px;
+}
+.header-class h1{
+    font-size: 25px;
+    text-align: center;
+    font-style: italic;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    size:0;
+    width: 100%;
+}
+
+.logo-form img{
+    float: left;
+}
+
+.navigation{
+    background-color:rgb(10, 153, 201);
+    font-size: 20px;
+    text-align: center;
+    justify-content: space-between;
+
+}
+
+ul{ 
+    
+    list-style-type: none;
+    gap: 10px;
+    display:flex;
+    padding-top: 10px;
+}
+
+nav{
+    padding:10px;
+    margin: 10px;
+}
+
+ul, li:hover{
+    color: white;
+}
+
+li:hover{
+    color: black;
+}
+.background{
+    background-image: url("/picture/back-ground.jpeg");
+    background-size: cover;
+    height: 1330px;
+    width: 1330px;
+    position: relative;
+}
+.home-about{
+    background-color: transparent;
+    text-align: center;
+    align-items: center;
+    position:absolute;
+    top:60%;
+    left: 60%;
+}

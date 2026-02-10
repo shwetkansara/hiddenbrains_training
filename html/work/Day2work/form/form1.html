@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form-1</title>
+        <link rel="stylesheet" type="text/css" href="form1.css">
+    </head>
+    <body>
+        <h1>Contact Us</h1>
+        <div class="contact-form">
+            <form>
+                <div class="name">
+                    <label>Your Name*</label>
+                </div>
+                    <div class="name-type">
+                        <input type="text" name="fname" placeholder="your first name" *>
+                        <input type="text" name="lname" placeholder="your last name" *>
+                    </div>
+                <div class="email">
+                    <label>Your E-mail*</label>
+                    <input type="email" name="email" placeholder="your E-mail" *>
+                </div>
+                <div class="number">
+                    <label>Your Phone-Number*</label>
+                    <input type="number" name="number" placeholder="your Phone-Number" max="10" *>
+                </div>
+                <div class="country">
+                    <label>Country*</label>
+                    <select *>
+                        <option>India</option>
+                        <option>USA</option>
+                        <option>UK</option>
+                    </select>    
+                </div>
+                <div class="gender">
+                    <label>Gender*</label>
+                </div>
+                    <div class="m-f">
+                        <label>Select Your Gender:</label>
+                        <input type="radio" name="male" id="male">
+                        <label for="male">Male </lable>
+                        <input type="radio" name="female" id="female">
+                        <label for="female">Female </lable>
+                    </div>
+                <div class="work-intrest">
+                    <label>Work Intrest*</label>
+                    <input type="checkbox" name="Account" id="Account" value="Account">
+                    <lable for="Account">Account</lable>
+                    <input type="checkbox" name="Business" id="Business" value="Business">
+                    <lable for="Business">Business</lable>
+                    <input type="checkbox" name="Management" id="Management" value="Management">
+                    <lable for="Management">Management</lable>
+                    <input type="checkbox" name="Office-work" id="Office-work" value="Office-work">
+                    <lable for="Office-work">Office-work</lable>
+                    <input type="checkbox" name="Receptionist" id="Receptionist" value="Receptionist">
+                    <lable for="Receptionist">Receptionist</lable>
+                </div>
+                <div class="message">
+                    <label >message*</label>
+                <textarea name="message" id="message" placeholder="your message"></textarea>
+                </div>
+                <div class="submit">
+                    <input type="submit" name="submit" value="submit" id="submit">
+                </div>
+            </form>
+        </div>   
+    </body>
+</html>

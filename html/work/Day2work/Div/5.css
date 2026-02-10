@@ -1,0 +1,42 @@
+.img-1{
+    float: left;
+    margin:  15px;
+}
+.pg-1{
+    float: left;
+    width: 950px;
+    border-bottom: 1px solid #e5d899;
+    padding-bottom: 25px;
+    margin-bottom: 20px;
+}
+
+.img-1 img{
+    border: 1px solid;
+    padding: 10px;
+
+}
+
+.info{
+    float: left;
+    width: 658px;
+}
+h3{
+    
+    color: #E11613;
+    margin-bottom: 10px;
+}
+p{
+    line-height: 20px;
+}
+
+ul, li{
+    margin: 8px 0 8px 0;
+    padding: 0 0 0 15px;
+    display: block;
+    font-size: 12px;
+    
+}
+.read{
+    text-decoration: none;
+    color: red;
+}

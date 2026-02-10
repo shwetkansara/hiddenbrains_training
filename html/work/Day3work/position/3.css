@@ -1,0 +1,32 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 8rem;
+   
+}
+img{
+   position: absolute;
+   bottom: 15px;
+   width: 5rem;
+}
+.main {
+  
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    width: 80%;
+    background-color:lightgrey;
+}
+.of-1{
+    color: red;
+}
+
+.nav-1{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed black;
+    align-items: center;
+    padding: 2rem;
+}

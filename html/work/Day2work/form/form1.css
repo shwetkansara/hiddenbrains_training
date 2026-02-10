@@ -1,0 +1,45 @@
+
+h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+}
+.contact-form{
+   
+    border-radius:10px;
+    border: solid;
+    padding: 20px;
+    margin: 10px;
+    width: 400px;
+    
+
+    
+}
+.name {
+  display: flex;
+}
+.contact-form label{
+    display: flex;
+}
+.checkbox{
+    display: flex;
+    flex-wrap: wrap;
+}
+.name-type{
+    display: flex;
+    justify-content: left;
+    flex-direction:row;
+    gap: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.country {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+

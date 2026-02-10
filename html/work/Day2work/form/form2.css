@@ -1,0 +1,14 @@
+form{
+    gap:20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.name {
+    display: flex;
+}
+
+.fname-lname, input[type=text] {
+    margin: 5px;
+
+}

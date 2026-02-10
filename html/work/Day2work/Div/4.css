@@ -1,0 +1,30 @@
+.car-box{
+    float: left;
+    width: 260px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    background: #fff;
+    margin: 0 23px 0 0;
+}
+
+.info{
+    margin: 10px;
+}
+
+h2{
+    color: red;
+    size: 15px;
+}
+p{
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+a {
+    color: green;
+    text-decoration: none;
+}
+.main{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    gap: 5px;
+}

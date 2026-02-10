@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cotact Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="form2.css">
+    </head>
+    <body>
+        <div class="contact-form">
+            <h1> Contact Form</h1>
+            <p> Please fill in your information and we'll be sending your order in no time. </p>
+
+            <div class="con-form">
+
+                <form class="con">
+                    <div class="name">
+                        <label>YOUR NAME*</label>
+                            <div class="fname-lname">
+                                <input type="text" name="fname" placeholder="your first name" *>
+                                <input type="text" name="lname" placeholder="your last name" *>
+                            </div>           
+                    </div>
+                    <div class="email">
+                        <label>E-MAIL ADDRESS*</label>
+                        <input type="email" name="email" placeholder="example@gmail.com" *>
+                    </div>
+                    <div class="phone">
+                        <label>PHONE NUMBER*</label>
+                            <div class="telephone">
+                                <input type="tel" placeholder="###" max="3">
+                                <input type="tel" placeholder="###" max="3">
+                                <input type="tel" placeholder="###" max="3">
+                            </div>     
+                    </div>
+                    <div class="country">
+                        <label>Message Subject *</label>
+                        <div class="mess-sub">
+                            <select>
+                                <option>Information</option>
+                                <option>Order</option>
+                                <option>Track Order</option>
+                            </select> 
+                        </div>    
+                    </div>
+                    <div class="message">
+                        <label >MESSAGE*</label>
+                        <textarea name="message" id="message" placeholder="your message"></textarea>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" name="submit" value="submit" id="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
