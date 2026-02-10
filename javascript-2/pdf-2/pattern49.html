@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern - 49</title>
+</head>
+<body>
+       <input type="number" id="size"> <br>
+    <br>
+    <button onclick="generate()">Generate</button><br>
+    <pre id="result"></pre>
+    <script>
+        function isprime(num){
+            if(num < 2) return false;
+                for(var i = 2; i <= Math.sqrt(num); i++){
+                    if(num % i === 0) return false;
+                }
+            return true;
+        }
+        function generate(){
+            var n = parseInt(document.getElementById("size").value);
+            var output = "";
+            var count = 0;
+            var num = 2;
+
+            for(var i = 1; i <= n; i++){
+                var printed = 0;
+                while(printed < i){
+                    if(isprime(num)){
+                        output += num + " ";
+                        printed++;
+                    }
+                    num++;
+                }
+                output += "\n";
+            }
+            document.getElementById("result").textContent = output;
+        }
+    </script>
+</body>
+</html>

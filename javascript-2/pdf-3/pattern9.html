@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern-9</title>
+</head>
+<body>
+    <input type="number" id="size"> <br>
+    <br>
+    <button onclick="generate()">Generate</button><br>
+    <pre id="result"></pre>
+    <script>
+        function generate(){
+            var n = parseInt(document.getElementById("size").value);
+            var out = "";
+
+            for(var i = n-1; i >= 0; i--){
+                for(var j = 0; j <= i; j++){
+                    out += String.fromCharCode(65 + j) + " ";
+                }
+                out += "\n";
+            }
+            /*  for(var i = 0; i < n; i++){
+                for(var j = 0; j <= i; j++){
+                    out += String.fromCharCode(65 + j) + " ";
+                }
+                out += "\n";
+            } */
+
+            document.getElementById("result").textContent = out;
+        }
+    </script>
+</body>
+</html>

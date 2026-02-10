@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>increment-decrement</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+    <p class="main m-4 p-2 shadow bg-body-tertiary border-top border-info border-5">
+        Implement counter functionality. use two button and add one div between them. On click of right
+    side button increment counter and on click of left button decrement counter and display counter
+    </p>
+
+    <div class="d-flex justify-content-between align-items-center m-4 p-2">
+        <button type="button" class="btn btn-primary m-4" id="left-btn" name="decrement" onclick="decrement()"> Decrement </button>
+        <p id="result" class="text-primary">0</p>
+        <button type="button" class="btn btn-primary m-4" id="right-btn" name="increment" onclick="increment()"> Increment </button>
+
+    </div>
+    <script>
+        var currentvalue = 0;
+        function increment(){
+            currentvalue++;
+            document.getElementById("result").innerText = currentvalue;
+        }
+        function decrement(){
+            currentvalue--;
+            document.getElementById("result").innerText = currentvalue;
+        }
+    </script>
+</body>
+</html>

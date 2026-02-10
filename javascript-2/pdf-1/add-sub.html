@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <title>Addition-Subtraction</title>
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="card mx-auto shadow" style="width:300px;">
+        <div class="card-body">
+            <input type="text" id="screen" class="form-control text-end mb-3" readonly>
+            <div class="row g-2">
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="display('7')">7</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="display('8')">8</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="display('9')">9</button></div>
+                <div class="col-3"><button class="btn btn-warning w-100" onclick="display('/')">÷</button></div>
+
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="display('4')">4</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="display('5')">5</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="display('6')">6</button></div>
+                <div class="col-3"><button class="btn btn-warning w-100" onclick="display('*')">×</button></div>
+
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="display('1')">1</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="display('2')">2</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="display('3')">3</button></div>
+                <div class="col-3"><button class="btn btn-warning w-100" onclick="display('-')">−</button></div>
+
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="display('0')">0</button></div>
+                <div class="col-3"><button class="btn btn-info w-100" onclick="square()">x²</button></div>
+                <div class="col-3"><button class="btn btn-info w-100" onclick="squareRoot()">√</button></div>
+                <div class="col-3"><button class="btn btn-warning w-100" onclick="display('+')">+</button></div>
+
+                <div class="col-6"><button class="btn btn-danger w-100" onclick="clearScreen()">C</button></div>
+                <div class="col-6"><button class="btn btn-success w-100" onclick="calculate()">=</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function display(val) {
+        document.getElementById("screen").value += val;
+    }
+
+    function clearScreen() {
+        document.getElementById("screen").value = "";
+    }
+    function calculate(){
+       
+        let value = document.getElementById("screen").value;
+        document.getElementById("screen").value = eval(value);
+    }
+    function square(){
+        let x = document.getElementById("screen").value;
+        document.getElementById("screen").value = x * x;
+    }
+    function squareRoot(){
+        let x = document.getElementById("screen").value;
+        document.getElementById("screen").value = Math.sqrt(x);
+    }
+</script>
+</body>
+</html>
+ 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern-13</title>
+</head>
+<body>
+    <input type="number" id="size"> <br>
+    <br>
+    <button onclick="generate()">Generate</button><br>
+    <pre id="result"></pre>
+    <script>
+        function generate() {
+            var n = parseInt(document.getElementById("size").value);
+            var out = "";
+            var ch = 65;
+    
+            for(var i = 0; i < n; i++){
+                out += " ".repeat(n - i - 1);
+                var coeff = 1;
+                for(var j = 0; j <= i; j++){
+                    var char = String.fromCharCode(ch + coeff - 1);
+                    out += char + " ";
+                    coeff = coeff * (i - j) / (j + 1); 
+                }
+                out += "\n";
+            }
+            document.getElementById("result").textContent = out;
+        }
+    </script>
+</body>
+</html>

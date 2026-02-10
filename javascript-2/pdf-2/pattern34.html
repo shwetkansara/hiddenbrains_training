@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern - 34</title>
+</head>
+<body>
+    <input type="number" id="size"> <br>
+    <br>
+    <button onclick="generate()">Generate</button><br>
+    <pre id="result"></pre>
+    <script>
+        function generate(){
+            var n = parseInt(document.getElementById("size").value);
+            var output = "";
+            
+
+            for(var i = 0; i < n; i++){
+                var num = i + 1;
+                for(var j = 0; j < n; j++){
+                    output += num;
+                    num++;
+                    if(num > n) num = 1;       
+                }  
+                output += "\n";
+            }
+            document.getElementById("result").textContent = output;
+        }
+    </script>
+</body>
+</html>

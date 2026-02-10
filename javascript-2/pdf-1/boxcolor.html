@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <title>Change Box Colour</title>
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="card mx-auto shadow" style="width: 300px;">
+            <div class="card-body"> 
+                <input type="text" id="maininput" placeholder="Enter Character in lowercase">
+            </div>
+            <div class="row">
+                <div class="col -sm-2">
+                    <div id="qBox" class="color-box p-2 m-2">
+                        <span class="box-label">Q</span>
+                        <span class="count-display" id="qCount">Count: 0</span>
+                    </div>
+                </div>
+                <div class="col -sm-2">
+                    <div id="aBox" class="color-box p-2 m-2">
+                        <span class="box-label">A</span>
+                        <span class="count-display" id="aCount">Count: 0</span>
+                    </div>
+                </div>
+                <div class="col -sm-2">
+                    <div id="zBox" class="color-box p-2 m-2">
+                        <span class="box-label">Z</span>
+                        <span class="count-display" id="zCount">Count: 0</span>
+                    </div>
+                </div>
+                <div class="col -sm-2">
+                    <div id="vBox" class="color-box p-2 m-2">
+                        <span class="box-label">V</span>
+                        <span class="count-display" id="vCount">Count: 0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script>
+        
+        const input = document.getElementById("maininput");
+        const qBox = document.getElementById("qBox");
+        const aBox = document.getElementById("aBox");
+        const zBox = document.getElementById("zBox");
+        const vBox = document.getElementById("vBox");
+        const qCount = document.getElementById("qCount");
+        const aCount = document.getElementById("aCount");
+        const zCount = document.getElementById("zCount");
+        const vCount = document.getElementById("vCount");
+
+        let Countq = 0;
+        let Counta = 0;
+        let Countz = 0;
+        let countv = 0;
+        let currentgroup = null;
+        let activeGroup = null;
+
+        input.addEventListener('keydown', function(event) {
+
+            if (!event.key || event.key.length !== 1) return;
+
+            const key = event.key.toLowerCase();
+
+            qBox.classList.remove('bg-primary');
+            aBox.classList.remove('bg-warning');
+            zBox.classList.remove('bg-danger');
+            vBox.classList.remove('bg-secondary');
+
+            if (activeGroup === null) {
+                if (key === 'q'){
+                    activeGroup = 'q';
+                } 
+                else if (key === 'a'){
+                     activeGroup = 'a';
+                }
+                else if (key === 'z'){
+                    activeGroup = 'z';
+                } 
+                else if (key === 'v'){
+                    activeGroup = 'v';
+                } 
+                else return; 
+            }
+
+            switch(activeGroup) {
+                case 'q':
+                    Countq++;
+                    qCount.textContent = Countq;
+                    qBox.classList.add('bg-primary');
+                break;
+                case 'a':
+                    Counta++;
+                    aCount.textContent = Counta;
+                    aBox.classList.add('bg-warning');
+                break;
+                case 'z':
+                    Countz++;
+                    zCount.textContent = Countz;
+                    zBox.classList.add('bg-danger');
+                break ;    
+            }
+        });
+    </script>
+</body>
+</html> 
