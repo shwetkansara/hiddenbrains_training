@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-10</title>
+</head>
+<body>
+    <p>
+        10) Write a Function  to find out the common array values and output as a array, values are of any types
+        - Example
+        Var array1 = [1,2,3,4,5]
+        Var array2 = [3,4,5,6,7]
+
+        Output :: [3,4,5] // 3 , 4 , 5 this value are in both array 
+    </p>
+    <script>
+        function common(ar1,ar2){
+            var result = [];
+
+            for(var i=0; i < ar1.length;i++){
+                if(ar2.includes(ar1[i]) && !result.includes(ar1[i])){
+                    result.push(ar1[i]);
+                }
+            }console.log(i);
+            return result;
+        }
+        console.log(common([1,2,3,4,5],[3,4,5,6,7]))
+    </script>
+</body>
+</html>

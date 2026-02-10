@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-2</title>
+</head>
+<body>
+    <p>
+        2) Reverse the string from the given Character Which occur first, take an input
+            - example
+            var string = "abaacac"
+            var char   = "c"
+            output     = "caabaac"
+            explaination::
+            a b a a c a c
+            Iterating the string we found “c” then we first reverse the string from that c then contact the remaining string.
+    </p>
+    <script>
+      
+        var str = "abaacac";
+        var ch = "c";
+        var pos = -1;
+
+        for (var i = 0; i < str.length; i++) {
+            if (str[i] == ch) {
+                pos = i;
+                break;
+            }
+        }
+
+        var fi = "";
+        for (var j = pos; j >= 0; j--) {
+            fi += str[j];
+        }
+        
+        var se = "";
+        for (var k = pos; k <= str.length; k++) {
+            if(str[k + 1]){
+                se = se + str[k + 1];
+            }
+            
+        }
+
+    
+
+        var result = fi + se;
+
+        alert(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-9</title>
+</head>
+<body>
+    <p>
+        Write a program that replaces the word from a given String, if the string does not have a word then print the string as it is, 
+Example
+Prompt Two value from the user, where 
+the first prompt value indicates the string as a sentence
+second Prompt value indicate the value with pipe (|) “{replace}|{replacewith}” & final result console/alert.
+
+
+    </p>
+    <script>
+        let inputsentence = prompt("enter the sentence:");
+        let changeinstruction = prompt("enter the word with |");
+        let pipeindex = 0;
+        let i = 0;
+        let instructionlength = changeinstruction.length;
+
+        while(i < instructionlength){
+            if(changeinstruction.charAt(i)=== '|'){
+                pipeindex = i;
+                break;
+            }
+            i++;
+        }
+        let wordToFind = "";
+        i = 0;
+        while (i < pipeindex) {
+            wordToFind += changeinstruction.charAt(i);
+            i++;
+        }
+        let wordToReplaceWith = "";
+        i = pipeindex + 1;
+        while (i < instructionlength) {
+            wordToReplaceWith += changeinstruction.charAt(i);
+            i++;
+        }
+        let stringContainsWord = false;
+        if (inputsentence.indexOf(wordToFind) !== -1) {
+            stringContainsWord = true;
+        }
+        let finalResult = "";
+
+        if (stringContainsWord) {
+            finalResult = inputsentence.replace(wordToFind, wordToReplaceWith);
+        }else {
+            finalResult = inputsentence;
+        }
+        alert(finalResult);
+    </script>
+</body>
+</html>

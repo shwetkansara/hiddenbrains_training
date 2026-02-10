@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-14</title>
+</head>
+<body>
+    <p>
+         Write a program to find out the maximum repetitive value from the array, values must be with value 1
+
+Input = [1,1,0,1,1,1]
+Output = 1 repeat 3 times
+
+    </p>
+    <script>
+        function maxrepeat(arr){
+            var count = 1;
+            var maxnum = arr[0];
+            var maxcount = 1;
+
+            for(var i = 1; i < arr.length; i++){
+                if(arr[i] === arr[i-1]){
+                    count++;
+                }else {
+                    count = 1;
+                }
+                if(count > maxcount){
+                    maxcount = count;
+                    maxnum = arr[i];
+                }
+
+            }console.log(maxcount);
+            return maxnum + " repeat " + maxcount + " times";
+        }
+        console.log(maxrepeat([1,1,0,1,1,1]));
+    </script>
+</body>
+</html>

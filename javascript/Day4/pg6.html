@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-6</title>
+</head>
+<body>
+    <label> Enter a String (sepratre word by .):</label>
+    <input type="text" id="str1" placeholder="i.am.boy"><br><br>
+
+    <button onclick="reversestring()">calculate</button><br><br>
+    <p id="result">result:</p>
+    <script>
+        function reversestring(){
+            var str = document.getElementById("str1").value.trim();
+
+            if(str.length  === 0){
+                alert("Please Enter A string");
+            }
+
+            var word = str.split(".");
+            console.log(word);
+
+            word.reverse();
+            console.log(word);
+
+            var output = word.join(".");
+
+            document.getElementById("result").innerText = "Reverse String is: "+output;
+
+        }
+    </script>
+</body>
+</html>

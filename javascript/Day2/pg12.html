@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-12</title>
+</head>
+<body>
+    <p>
+        12) Write a program to plus one into the array, output as in array form
+
+        digits = [1,2,3]
+        Output: [1,2,4]
+
+    </p>
+    <script>
+        function plusone(digits){
+            for(var i = digits.length -1; i >=0; i--){
+                if(digits[i] < 9){
+                    digits[i]++;
+                    return digits;
+                }
+                digits[i] = 0;
+            }
+            digits.unshift(1);
+            return digits ;
+        }
+        console.log(plusone([1,2,4]));
+    </script>
+</body>
+</html>

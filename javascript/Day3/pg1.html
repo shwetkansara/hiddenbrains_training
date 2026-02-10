@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-1</title>
+</head>
+<body>
+    <h2>create counter</h2>
+
+    <input type="number" id="input-num" placeholder="enter the value">
+    <button onclick="getvalue()">Click Me</button> 
+    <br><br>
+    <div id="btns">
+        <button class="btn" onclick="increasevalue(1)">+1</button>
+        <button class="btn" onclick="increasevalue(2)">+2</button>
+        <button class="btn" onclick="increasevalue(5)">+5</button>
+        <button class="btn" onclick="increasevalue(-1)">-1</button>
+        <button class="btn" onclick="increasevalue(-2)">-2</button>
+        <button class="btn" onclick="increasevalue(-5)">-5</button>
+    </div>
+    <br>
+    <div id="result">
+        Result : <span id="finalresult">0</span>
+    </div>
+    <script>
+        var currentvalue = 0;
+
+        function getvalue(){
+            var input = document.getElementById("input-num").value;
+
+            if(input == ""){
+                alert("enter value");
+                return
+            }
+            currentvalue = parseInt(input);
+            document.getElementById("finalresult").innerText = currentvalue;
+        }
+        function increasevalue(num){
+            currentvalue = currentvalue + num;
+            document.getElementById("finalresult").innerText = currentvalue;        
+        }
+    </script>
+</body>
+</html>

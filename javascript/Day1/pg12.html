@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-12</title>
+</head>
+<body>
+    Find the Leaders. There should be a single array. Your task is to find leaders in the array. An element of the array is a leader if it is greater than or equal to all the elements to its right side. The rightmost element is always a leader.
+	
+	Ex. [16,17,4,3,5,2]
+		Output: 17,5,2
+
+	Ex. [1,2,3,4,0]
+		Output: 4,0
+
+    <script>
+        let n = Number(prompt("Enter array size:"));
+        let leadarr = [];
+        for(let i = 0; i < n; i++){
+            leadarr[i] = Number(prompt("enter the element "+(i+1)));
+        }
+        let leaders = "";
+        for(let i = 0; i < leadarr.length; i++){
+            let isleader = true;
+            for(let j = i+1; j < leadarr.length; i++){
+                if(leadarr[i] < leadarr[j]){
+                    isleader = false;
+                    break;
+                }
+            }
+            if(isleader == true) {
+                leaders = leaders + leadarr[i] + "";
+            }
+        }
+        alert("leaders:"+leaders)
+    </script>
+</body>
+</html>

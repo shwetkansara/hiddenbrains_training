@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-11</title>
+</head>
+<body>
+    <p>
+        11) Write a program to return the indices of the array by summing the array values,
+        Example
+        nums = [2,7,11,15], 
+        target = 9
+        Output: [0,1]
+    </p>
+    <script>
+        function sumtwo(nums , target){
+            for(var i = 0; i < nums.length;i++){
+                for(var j =i + 1; j < nums.length;j++){
+                    if(nums[i] + nums[j] === target){
+                        return[i, j];
+                    }
+                }
+            }
+        }
+        console.log(sumtwo([2,7,11,15],9));
+    </script>
+</body>
+</html>

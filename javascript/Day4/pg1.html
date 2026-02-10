@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-1</title>
+</head>
+<body>
+    <label> Enter a arry1 (use comma to seprate):</label>
+    <input type="text" id="arrA" placeholder="3,1,1,"><br><br>
+    <label> Enter a arry2 (use comma to seprate):</label>
+    <input type="text" id="arrB" placeholder="3,1,1,"><br><br>
+
+    <button onclick="minimizesum()">calculate</button>
+
+    <p id="result">result:</p>
+    <script>
+        function minimizesum(){
+            var A = document.getElementById("arrA").value.split(",").map(Number);
+            var B = document.getElementById("arrB").value.split(",").map(Number);
+
+            if(A.length !== B.length){
+                alert("array must be same size");
+            }
+
+            // array1 sort in asce
+            A.sort((a,b)=> a-b);
+            
+            // arry2 sort in desc
+            B.sort((a,b)=> b-a);
+
+            var sum = 0;
+
+            for(var i = 0; i < A.length; i++){
+                sum += A[i] * B[i];
+                
+            }
+            document.getElementById("result").innerText = "Minimize  Sum of Product is = "+sum;
+        }
+        
+    </script>
+</body>
+</html>

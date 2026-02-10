@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-11</title>
+</head>
+<body>
+    <p>
+        Find the position of an element in the array. (without using any method)
+	Cases 
+If it is present, then return the index of that element
+If it is not present, then return -1
+If it is present more than 1 time, then return 2
+
+Ex. Arr [1,5,6,8,9,8]
+Element: 9, Output: 4
+Element: 10, Output: -1
+Element: 8, Output: 2
+
+    </p>
+    <script>
+        let arr = [];
+        let arraysize = prompt("enter the arraysize:");
+        for(let i = 0; i < arraysize; i++){
+            arr[i] = Number(prompt("enter the element "+(i+1)));
+        }
+        let sear = Number(prompt("enter the element number: "));
+
+        let count = 0;
+        let index = -1;
+        for(let i = 0; i < arr.length;i++){
+            if(arr[i] == sear){
+                count++;
+                index = i;
+            }
+        }
+        if(count == 0){
+            alert("not found");
+        }else if(count == 1){
+            alert("Index:"+index);
+        }else{
+            alert("more than one");
+        }
+    </script>
+</body>
+</html>

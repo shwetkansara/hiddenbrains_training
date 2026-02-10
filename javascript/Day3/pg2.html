@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-2</title>
+</head>
+<body>
+    <div id="card">
+        <p><b>Name: </b><span id="name"></span></p>
+        <p><b>Email: </b><span id="email"></span></p>
+        <p><b>Age: </b><span id="age"></span></p>
+    </div>
+    <button onclick="priv()">previous</button>
+    <button onclick="next()">next</button>
+    <script>
+        const dataarray = [
+            { username:"User1", userEmail:"user1@demo.com", age:20 },
+            { username:"User2", userEmail:"user2@demo.com", age:25 },
+            { username:"User3", userEmail:"user3@demo.com", age:30}
+        ];console.log(dataarray);
+        var index = 0;
+        function display(){
+            document.getElementById("name").innerText = dataarray[index].username;
+            document.getElementById("email").innerText = dataarray[index].userEmail;
+            document.getElementById("age").innerText = dataarray[index].age;
+        }
+        display();
+
+        function next(){
+            index++;
+            if(index < 0){
+                index.dataarray.length -1;
+            }
+            display();
+        }
+        function priv(){
+            index--;
+            if(index < 0){
+                index.dataarray.length -1;
+            }
+            display();
+        }
+    </script>
+</body>
+</html>

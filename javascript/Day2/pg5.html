@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program-5</title>
+</head>
+<body>
+    <p>
+        5) Write a JS function to sum the odd index value of the array and even index value from an array, take a static array value which must contain the number.
+        arr = [10,20,30,40,50];
+    </p>
+    <script>
+        arr = [10,20,30,40,50];
+        var evensum = 0;
+        var oddsum = 0;
+        for(var i = 0; i < arr.length;i++){
+            if(i % 2 == 0){
+                evensum = evensum + arr[i];
+            } else {
+                oddsum = oddsum + arr[i];
+            } 
+        }
+        alert("oddsum: " +oddsum);
+        alert("evensum: "+evensum);
+    </script>
+</body>
+</html>

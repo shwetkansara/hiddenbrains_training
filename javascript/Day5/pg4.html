@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-4</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+        td{
+            width: 50px;
+            height: 40px;
+            border: 2px solid black;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>FUll house Ticket Generator</h1> <br><br>
+
+    <button onclick="generateTicket()">Click Me</button>
+    <table id="ticket"></table>
+    <script>
+
+        function getRandom(min, max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function generateTicket(){
+            
+            var rows = 3;
+            var cols = 9;
+
+            var ticket = Array.from({length: rows}, () => Array(cols).fill(""));
+
+            var used = new Set();
+
+            var ranges = [
+                [1,10],
+                [11,20],
+                [21,30],
+                [31,40], 
+                [41,50], 
+                [51,60],
+                [61,70],
+                [71,80],
+                [81,90]
+            ];
+
+            // pick how many numbers per column
+            var colCount = Array(cols).fill(1);
+            var remaining = 15 - cols;
+            
+            while(remaining > 0){
+                var c = getRandom(0,8);
+                if(colCount[c] < 3){
+                    colCount[c]++;
+                    remaining--;
+                }
+            }
+
+            // Generate number for each each column
+            var colNumbers = [];
+            for(var c = 0; c < cols; c++){
+                var nums = [];
+                while(nums.length < colCount[c]){
+                    var n = getRandom(ranges[c][0],ranges[c][1]);
+                    if(!used.has(n)){
+                        used.add(n);
+                        nums.push(n);
+                    }
+                }
+                nums.sort((a,b) => a - b);
+                colNumbers.push(nums);
+            }
+
+            // place numbers into rows 
+            var rowcount = [0,0,0];
+
+            for(var c = 0; c < cols; c++){
+                for(var num of colNumbers[c]){
+                    var placed = false;
+                    while(!placed){
+                        var r = getRandom(0,2);
+                        if (rowcount[r] < 5 && ticket[r][c] === ""){
+                            ticket[r][c] = num;
+                            rowcount[r]++;
+                            placed = true;
+                        }
+                    }
+                }
+            }
+
+            // display ticket 
+            var table = document.getElementById("ticket");
+            table.innerHTML = "";
+
+            for(var r = 0; r < rows; r++){
+                var tr = document.createElement("tr");
+                for(var c = 0; c < cols; c++){
+                    var td = document.createElement("td");
+                    td.innerText = ticket[r][c];
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+        }
+    </script>
+</body>
+</html>

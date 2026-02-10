@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-1</title>
+    <style>
+        table{
+            border: 2px solid black;
+        }
+        tr{
+            border: 2px solid black; 
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter the Name"> <br><br>
+    <input type="text" id="surname" placeholder="Enter the Sur-Name"> <br><br>
+    <input type="email" id="email" placeholder="Enter the email"> <br><br>
+    <button class="btn-save" onclick="CreateUser()">Save</button> <br> <br>
+    <button class="btn-update">update</button> <br> <br>
+    <p id="message"></p> <br><br>
+
+    <h3>Delete-User</h3>
+    <input type="email" id="delete-email" placeholder="Enter the email"> <br><br>
+    <button class="btn-delete">Delete</button> <br> <br>
+
+    <h3>User List</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>FUll Name:</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="usertable">
+            
+        </tbody>
+    </table>
+    <script>
+        var users = JSON.parse(localStorage.getItem("users")) || [];
+
+        function validation(name, surname, email) {
+            if (name === "") {
+                alert("Name is required");
+                return false;
+            }
+            if (surname === "") {
+                alert("Surname is required");
+                return false;
+            }
+            if (email === "") {
+                alert("Email is required");
+                return false;
+            }
+            return true;
+        }
+
+        function clearForm() {
+            document.getElementById("name").value = "";
+            document.getElementById("surname").value = "";
+            document.getElementById("email").value = "";
+        }
+
+        function saveToStorage() {
+            localStorage.setItem("users", JSON.stringify(users));
+        }
+
+        function loadUser() {
+            var table = document.getElementById("usertable");
+            table.innerHTML = "";
+
+            users.forEach((user, index) => {
+                table.innerHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${user.name} ${user.surname}</td>
+                        <td>${user.email}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        function CreateUser() {
+            var name = document.getElementById("name").value.trim();
+            var surname = document.getElementById("surname").value.trim();
+            var email = document.getElementById("email").value.trim();
+
+            if (!validation(name, surname, email)) return;
+
+            users.push({ name, surname, email });
+            saveToStorage();
+            loadUser();
+            clearForm();
+        }
+        loadUser();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- function loadUsers() {
+    const table = document.getElementById("userTable");
+    table.innerHTML = "";
+
+    users.forEach((user, index) => {
+        table.innerHTML += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${user.name} </td>
+                <td>${user.surname}</td>
+                <td>${user.email}</td>
+            </tr>
+        `;
+    });
+} -->

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-3</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+    <ul>
+        <li>apple</li>
+        <li>banana</li>
+        <li>orange</li>
+    </ul>
+    <ul>
+        <li>test1</li>
+        <li>test2</li>
+        <li>test3</li>
+    </ul>
+    <button onclick="changelist()">click me </button>
+    <script>
+        var currentindex = 0;
+        function changelist(){
+            var list = document.querySelectorAll("ul");
+            var items = list[currentindex].querySelectorAll("li");
+
+            if (items.length >= 2){
+                items[0].innerText = "first";
+                items[1].innerText = "second";
+                items[2].innerText = "thrid";
+            }
+            currentindex++;
+            if(currentindex >= list.length){
+                currentindex = 0;
+            }
+        }
+    </script>
+</body>
+</html>

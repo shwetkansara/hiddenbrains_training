@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-16</title>
+</head>
+<body>
+    <p>
+        16) Write a program to delete duplicates records 
+Input : 
+[
+	{ code : “HB123”,email:”hb@yopmail.com” },
+	{ code : “HB122”,email:”hb@yopmail.com” },
+	{ code : “HB124”,email:”hb1@yopmail.com” }
+]
+    </p>
+    <script>
+        var data = [
+            { code : "HB123",email : "hb@yopmail.com" },
+            { code : "HB122",email : "hb@yopmail.com" },
+            { code : "HB124",email : "hb1@yopmail.com" }
+        ];
+        function removeduplicate(arr){
+            var seen = new Set();
+            var result = [];
+            for(var i = 0; i < arr.length;i++){
+                if(!seen.has(arr[i].email)){
+                    seen.add(arr[i].email);
+                    result.push(arr[i]);
+                }
+            }
+            return result;
+        }
+        console.log(removeduplicate(data));
+    </script>
+</body>
+</html>

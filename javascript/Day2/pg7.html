@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-7</title>
+</head>
+<body>
+    <p>
+
+        7) Write a JS function to rearrange the order given below.
+        - Example
+        Constraints = array length always even
+
+        A = [ 1  , 2 ,3  ,4 ]
+                X1  X2 Y1 Y2 
+
+        Output = [ 1 , 3 , 2 , 4  ]
+                    X1  Y1 X2 Y2
+    </p>
+    <script>
+        function rearrangearray(arr){
+            var mid ;
+            var result = [];
+
+            mid = arr.length / 2 ;
+
+            for(var i = 0; i < mid;i++){
+                result.push(arr[i]);
+                result.push(arr[i + mid]);
+            }console.log(result);
+            return result;
+        }
+        console.log(rearrangearray([1,2,3,4]));
+    </script>
+</body>
+</html>

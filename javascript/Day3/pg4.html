@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-4</title>
+</head>
+<body>
+    <input type="text" id="inputstr" placeholder="Enter the string">
+    <button onclick="removepair()">process</button>
+
+    <br>    <br>
+    Output:<span id="output"></span>
+    <script>
+        function removepair(){
+            var str = document.getElementById("inputstr").value;
+            var stack = [];
+            for (var i = 0; i < str.length; i++){
+                var ch = str[i];
+
+                if(stack.length > 0 && stack[stack.length -1]=== ch){
+                    stack.pop();
+                } else {
+                    stack.push(ch);
+                }
+            }
+            document.getElementById("output").innerText = stack.join("");
+        }
+    </script>
+</body>
+</html>

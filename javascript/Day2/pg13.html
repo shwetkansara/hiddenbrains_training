@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-13</title>
+</head>
+<body>
+    <p>
+        13) Write a program to return the single value from the array which are not repetitive in array
+        nums = [2,2,1]
+        Output: 1
+    </p>
+    <script>
+        function notrepeat(nums){
+             var result = 0;
+             for(var i = 0; i < nums.length;i++){
+                result = result ^ nums[i];
+             }
+             return result;
+        }
+        console.log(notrepeat([2,2,1]));
+    </script>
+</body>
+</html>

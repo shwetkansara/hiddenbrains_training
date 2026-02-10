@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-2</title>
+</head>
+<body>
+    <label> Enter a arry1 (use comma to seprate):</label>
+    <input type="text" id="arrA" placeholder="3,1,1,"><br><br>
+    <label> Enter a arry2 (use comma to seprate):</label>
+    <input type="text" id="arrB" placeholder="3,1,1,"><br><br>
+
+    <label> Enter the sum:</label>
+    <input type="number" id="sumx"><br><br>
+
+    <button onclick="findpair()">calculate</button>
+
+    <p id="result"></p>
+    <script>
+        function findpair(){
+            var A = document.getElementById("arrA").value.split(",").map(Number);
+            var B = document.getElementById("arrB").value.split(",").map(Number);
+            var X = Number(document.getElementById("sumx").value);
+
+              if(A.length !== B.length){
+                alert("array must be same size");
+            }
+
+            var result = [];
+            var setB = new Set(B);
+            
+            for(var i = 0; i < A.length; i++){
+                var need ;
+                need = X - A[i];
+                if(setB.has(need)){
+                    result.push("("+ A[i] + "," + need + ")");
+                }
+            }
+            if(result.length === 0){
+                alert("No pair found");
+            } else {
+                document.getElementById("result").innerText = "Pairs: "+result.join(",");
+            }
+
+        }
+    </script>
+</body>
+</html>

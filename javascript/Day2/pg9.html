@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-9</title>
+</head>
+<body>
+    <p>
+        9) Write a JS function which accepts two parameters called startIndex and endIndex having static number array, sum the array values between startIndex and endIndex.
+
+    </p>
+    <script>
+        function sumindex(arr,startIndex,endIndex){
+            var sum = 0;
+
+            for(var i = startIndex; i < endIndex; i++){
+                sum = sum + arr[i];
+            }
+            return sum;
+        }
+        console.log(sumindex([10,20,30,40,50,60],1,4));
+    </script>
+</body>
+</html>

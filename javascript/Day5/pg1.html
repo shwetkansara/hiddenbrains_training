@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-1</title>
+</head>
+<body>
+     <label> Enter a Array (sepratre word by ,):</label>
+    <input type="text" id="arr1" placeholder="3,1,2,4"><br><br>
+
+    <button onclick="reversearray()">calculate</button><br><br>
+    <p id="result">result:</p>
+    <script>
+        function reversearray() {
+
+            var input = document.getElementById("arr1").value
+                .split(",")
+                .map(s => s.trim());  
+
+            input.sort(function (a, b) {
+                if (a + b > b + a) {
+                    return -1;
+                } else if (a + b < b + a) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });
+
+            var result = input.join("");
+
+            // Edge case: all zeros
+            if (result[0] === "0") result = "0";
+
+            console.log(result);
+            document.getElementById("result").innerText = "Output Is: " + result;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-3</title>
+</head>
+<body>
+    <p>
+        Write a program to accept N number subject marks individually. All Subject marks can be out of 100. 
+          a]  Print Total Marks Achieved.
+          b]  Print Percentage.
+
+    </p>
+    <script>
+        let total=0;
+        let subject = prompt("enter your total Subject:");
+        for(i=0;i < subject;i++){
+            let marks = Number(prompt("enter your Subject marks:"));
+            total += marks;
+        }
+        let per = (total / (subject* 100)) * 100;
+        alert(total);
+        alert(per);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-1</title>
+</head>
+<body>
+    <p>
+    Write a js function that corrects the order of the given string. 
+
+    - For example, 
+      var index  = [ 8,9,10,11,12,7,1,2,3,4,5,6 ]
+      var string =  brain hidden
+      
+      
+      Understand :: [ 8, 9, 10, 11, 12, 7, 1, 2, 3, 4, 5, 6 ]
+                        b  r    a    i    n        h  i  d  d  e  n 
+       Output: hidden brain
+
+    </p>
+    <script>
+        var index  = [7,8,9,10,11,12,6,1,2,3,4,5,6 ];
+        var str = "brain hidden" ;
+
+        alert(f1(index,str));
+
+        function f1(index,str){
+            var result = "";
+
+             for(var i = 0; i < index.length;i++){
+                result = result + str[index[i]-1];
+            }
+            return(result);
+        }
+    </script>
+</body>
+</html>

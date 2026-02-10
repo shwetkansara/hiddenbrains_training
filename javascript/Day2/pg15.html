@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-15</title>
+</head>
+<body>
+    <p>
+        15) Write a program to find out the string has the valid parentheses
+
+            Input: s = "()[]{}"
+            Output: true
+    </p>
+    <script>
+        function stringvalid(s){
+            var stack = [];
+            var ch;
+            var map = {
+                ')': '(',
+                ']' : '[',
+                '}' : '{'    
+            };
+            for(var i = 0; i < s.length; i++){
+                ch = s[i];
+                if(s[i] === '(' || s[i] === '[' || s[i] === '{'){
+                    stack.push(ch);
+                } else {
+                    if(stack.pop() !== map[ch]){
+                        return false;
+                    }
+                    
+                    if(stack.length === 0){
+                        return true;
+                    }
+                }
+            }
+            return stack;
+        }
+        console.log(stringvalid("()[]{}"));
+    </script>
+</body>
+</html>

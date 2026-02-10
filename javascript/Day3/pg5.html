@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-5</title>
+</head>
+<body>
+    <script>
+
+        function minjump(arr){
+
+            if(arr.length <= 1){
+                return 0;
+            }
+            if(arr[0] === 0){
+                return -1;
+            }
+
+            var jumps = 1;
+            var step = arr[0];
+            var maxReach = arr[0]; 
+
+            for(var i = 0; i < arr.length; i++){
+                if(i === arr.length - 1){
+                    return jumps;
+                }
+                maxReach = Math.max(maxReach, i + arr[i]);
+                step--;
+
+                if(step === 0){
+                    jumps++;
+                    currentEnd = maxReach;
+                }
+                if(i >= maxReach){
+                    return -1;
+                }console.log(currentEnd);
+                step = maxReach - i;
+            }
+            return -1;
+        }
+        console.log(minjump([1,3, 5, 8, 9, 2, 6, 7, 6, 8, 9]));
+    </script>
+</body>
+</html>

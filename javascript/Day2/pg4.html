@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program-4</title>
+</head>
+<body>
+    <p>
+        4) remove duplicate characters from enter string
+        - Example
+        Var string = “axyxyz”
+        Var Output =   az
+    </p>
+    <script>
+        var str ="axyxyz";
+        var result = "";
+        for(var i = 0; i < str.length;i++){
+            var count = 0;
+            for(var j = 0; j < str.length;j++){
+                if(str[i] === str[j]){
+                    count++;
+                }
+            }
+            if(count === 1){
+                result += str[i];
+            }
+        }
+        alert(result);                                        
+    </script>
+</body>
+</html>
